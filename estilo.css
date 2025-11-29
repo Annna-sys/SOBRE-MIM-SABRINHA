@@ -1,0 +1,156 @@
+/* Estilos CSS (estilo.css) */
+:root {
+    --primary-color: #E2C675; /* Dourado */
+    --secondary-color: #FFFBF5; /* Branco Cremoso */
+    --text-color: #020202; /* Preto */
+    --accent-light: #F9F0E1; /* Tom claro do dourado para gradiente */
+    --shadow-color: rgba(0, 0, 0, 0.08); /* Sombra mais sutil */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    
+    /* 🟢 FUNDO COM GRADIENTE SUAVE 🟢 */
+    background: linear-gradient(to bottom, var(--secondary-color) 0%, var(--accent-light) 100%); 
+}
+
+.container {
+    max-width: 900px;
+    /* Aumento da margem no desktop para centralizar melhor */
+    margin: 50px auto; 
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    /* Sombra mais suave */
+    box-shadow: 0 8px 20px var(--shadow-color); 
+}
+
+header {
+    text-align: center;
+    /* Aumento da margem no desktop */
+    margin-bottom: 40px; 
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 2.5em;
+    margin: 0;
+}
+
+/* Layout em duas colunas para foto e texto */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 40px; /* Aumenta o espaço entre a foto e o texto no desktop */
+}
+
+.photo-area {
+    flex: 1;
+    min-width: 200px; 
+    text-align: center;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; 
+    object-fit: cover;
+    /* Borda da foto mais visível (usando o dourado claro para um toque de contraste) */
+    border: 5px solid var(--accent-light); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil na foto */
+    margin-bottom: 15px;
+}
+
+.text-area {
+    flex: 2;
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 1.4em;
+    /* Linha lateral branca cremosa, mantendo a sutileza */
+    border-left: 4px solid var(--secondary-color); 
+    padding-left: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+strong {
+    color: var(--primary-color);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+ul li {
+    background: var(--secondary-color); /* Fundo dos itens mais claro (#FFFBF5) */
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 4px;
+    border-left: 3px solid var(--primary-color); /* Linha lateral dourada */
+}
+
+/* Estilo para botões de contato */
+.contact-links {
+    margin-top: 30px; /* Mais espaço acima dos botões */
+    text-align: center;
+}
+
+.btn-contact {
+    display: inline-block;
+    background-color: var(--primary-color); /* Dourado */
+    color: #FFFFFF; /* Texto branco puro */
+    padding: 12px 25px; /* Botões ligeiramente maiores */
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: background-color 0.3s, transform 0.1s;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-contact:hover {
+    background-color: #B2A260; /* Dourado mais escuro ao passar o mouse */
+    transform: translateY(-1px); /* Efeito sutil de elevação */
+}
+
+/* Media Query para telas menores (celulares) */
+@media (max-width: 650px) {
+    .container {
+        /* Margem lateral menor no celular */
+        margin: 20px 15px;
+        padding: 20px;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .photo-area {
+        text-align: center;
+        order: -1; /* colocar a foto antes do texto em telas pequenas */
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+}
